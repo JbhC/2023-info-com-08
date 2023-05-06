@@ -35,7 +35,7 @@ posibilidades = {
     False : "no existe"
 }
 
-yes_python = "python" in frase
+yes_python = "python" in fm
 
 print("En la frase introducida la palabra Python",posibilidades[yes_python])
 
