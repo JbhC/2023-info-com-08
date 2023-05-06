@@ -1,46 +1,41 @@
-""" Desafío 2: Analizador de textos
-    Requisitos técnicos:
-        Métodos y propiedades de string.
-       Indexar estructuras de datos.
-        Todos los tipos de datos
+# Desafío 2: ANALIZADOR DE TEXTOS
 
-Se te pide crear un programa que le pida al usuario que ingrese un texto
-cualquiera, por ejemplo, un artículo o una frase.
-Luego el programa le va a pedir al usuario que también ingrese 3 letras a su
-elección."""
+# Crear un programa que le pida al usuario ingresar un texto y luego 3 letras de su interés; a partir de ello que se analice: 
 
 frase =(input("Ingrese el texto: "))
-
 fm = frase.lower()
-
 l1 = input("Ingrese primera letra: ")
 l2 = input("Ingrese segunda letra: ")
 l3 = input("Ingrese tercera letra: ")
 
-"""Nuestro código va a procesar esa información para realizar los análisis
-necesarios para devolverle al usuario la siguiente información:
+# 1°) Cantidad de veces que aparece cada letra 
 
-1) Cantidad de veces que aparece cada una de letras que eligió.
-Tip 1: almacenar las letras en una lista para usar algún método de contar un substring en un
-string
-Tip 2: al buscar las letras puede haber mayúscula y minúsculas. Para asegurar que se
-encuentren todas las letras, pasa tanto el texto original como las letras a buscar a
-minúscula."""
+letras = [l1.lower(),l2.lower(),l3.lower()]
+for i in letras:
+    print("La letra ",i," aparece ",fm.count(i),"veces.")
 
+# 2°) Cantidad total de palabras en el texto
 
-print("La letra ",l1," aparece ",fm.count(l1.lower()),"veces.")
-print("La letra ",l2," aparece ",fm.count(l2.lower()),"veces.")
-print("La letra ",l3," aparece ",fm.count(l3.lower()),"veces.")
+palabras = frase.split(" ")
+print("La cantidad de palabras que tiene el texto ingresado es: ",len(palabras))
 
-"""2) Cuantas palabras hay en total en todo el texto.
-Tip 3: usa métodos para transformar el texto en lista de palabras y para calcular su longitud."""
+# 3°) Primera y última letra que aparecen en el mismo
 
+print(f'La primera letra es {frase[0]}, y la última letra es {frase[-1]}')
 
+# 4°) Mostrar el texto en orden inverso
 
-"""3- Cual es la primera letra y cuál es la última. (Indexación)
+palabras.reverse()
+print("El texto en orden inverso es: ",palabras)
 
-4- Mostrar el texto en orden inverso.
+# 5°) Indicar si la palabra "Python" aparece en el texto
 
-5- Decir si la palabra "python" aparece en el texto.
-Tip 4: usa bool para verificar si se encuentra, y un diccionario para asociar el booleano con un
-string para mostrar al usuario."""
+posibilidades = {
+    True : "existe",
+    False : "no existe"
+}
+
+yes_python = "python" in frase
+
+print("En la frase introducida la palabra Python",posibilidades[yes_python])
+
