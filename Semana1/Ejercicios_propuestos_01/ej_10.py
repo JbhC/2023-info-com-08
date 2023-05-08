@@ -4,4 +4,4 @@
 
 dolar = float(input("Ingrese el monto en dolares: "))
 euro = round(dolar * 0.84,2)
-print("EL monto en dólares corresponde a ",euro,"euros.")
+print("El monto en dólares corresponde a ",euro,"euros.")
