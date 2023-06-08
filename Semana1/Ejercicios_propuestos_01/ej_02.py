@@ -2,3 +2,5 @@
 
 nombre=input("Ingrese su nombre: ")
 print("Hola "+nombre +". Bienvenida/o al Informatorio 2023")
+
+
